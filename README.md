@@ -14,3 +14,7 @@
 Note: There is no right or wrong way to achieve this. Please provide instructions on how to run your solution. Please use Docker where appropriate for access to dependencies (Databases, runtimes etc).
 
 If you'd prefer not have this repo public on your Github, feel free to clone it into a private repo with your provider of choice. Give alex.revell@abx.com view permissions when you are complete.
+
+
+## Solution
+WIP
