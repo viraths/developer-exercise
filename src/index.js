@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './containers/App';
 
 ReactDOM.render(
-  <h1>ABX - Developer exercis (getting there)</h1>,
+  <App />,
   document.getElementById('root')
 );
