@@ -46,7 +46,7 @@ const generateCo2EmissionData = async (co2EmissionData) => {
     const highestEmission = co2EmissionData.reduce((a, b) => Math.max(a, b));
     const year = co2EmissionData.indexOf(highestEmission);
 
-    return { year, highestEmission };
+    return { year, highestEmission: highestEmission.toFixed(2) };
 }
 
 const getReportData = async () => {

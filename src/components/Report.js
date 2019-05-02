@@ -38,30 +38,26 @@ class Report extends React.Component {
         return (
             <div>
                 {title}
-                <h3>The country with the higest average of "Urban population growth (annual %)" between 1980 and 1990</h3>
-                <table>
-                    <tbody>
-                        <tr><td colSpan="2">The country with the higest average of "Urban population growth (annual %)" between 1980 and 1990</td></tr>
-                        <tr>
-                            <td>Country:</td>
-                            <td>{this.state.populationGrowth.country}</td>
-                        </tr>
-                        <tr>
-                            <td>Average:</td>
-                            <td>{this.state.populationGrowth.averageGrowth}</td>
-                        </tr>
-                        <tr><td colSpan="2"></td></tr>
-                        <tr><td colSpan="2">The year with the highest "CO2 emissions (kt)"</td></tr>
-                        <tr>
-                            <td>Country:</td>
-                            <td>{this.state.co2Emission.year}</td>
-                        </tr>
-                        <tr>
-                            <td>Average:</td>
-                            <td>{this.state.co2Emission.highestEmission}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="row-fluid">
+                    <div className="span3 tiny ">
+                        <div className="pricing-table-header-tiny">
+                            <h2>The country with the higest average of "Urban population growth (annual %)" between 1980 and 1990</h2>
+                        </div>
+                        <div className="pricing-table-features">
+                            <p>Country: <strong>{this.state.populationGrowth.country}</strong></p>
+                            <p>Average: <strong>{this.state.populationGrowth.averageGrowth}</strong></p>
+                        </div>
+                    </div>
+                    <div className="span3 small">
+                        <div className="pricing-table-header-small">
+                            <h2>The year with the highest "CO2 emissions (kt)"</h2>
+                        </div>
+                        <div className="pricing-table-features">
+                            <p>Year: <strong>{this.state.co2Emission.year}</strong></p>
+                            <p>Emission (kt): <strong>{this.state.co2Emission.highestEmission}</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
