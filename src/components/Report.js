@@ -12,13 +12,15 @@ class Report extends React.Component {
             co2Emission: {
                 year: '',
                 highestEmission: ''
-              }
+            },
+            populationGrowthData: [],
+            co2EmissionData: []
         };
     }
     getReportData() {
         fetch('/report')
             .then(res => res.json())
-            .then(res => this.setState(res));
+            .then(res => {console.log(res);this.setState(res)});
     }
 
     componentWillMount() {
@@ -26,6 +28,9 @@ class Report extends React.Component {
     }
 
     render() {
+
+        console.log('Population', this.state.populationGrowthData);
+        console.log('Emission', this.state.co2EmissionData);
         return (
             <div>
                 <h1>ABX - Developer exercis (getting there)</h1>
