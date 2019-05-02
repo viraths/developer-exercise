@@ -6647,8 +6647,8 @@ a.badge:focus {
     float: left;
     width: 100%;
     min-height: 30px;
-    margin-left: 2.564102564102564%;
-    *margin-left: 2.5109110747408616%;
+    /* margin-left: 2.564102564102564%; */
+    /* *margin-left: 2.5109110747408616%; */
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -6899,7 +6899,7 @@ a.badge:focus {
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   .container,
   .navbar-static-top .container,
@@ -6997,8 +6997,8 @@ a.badge:focus {
     float: left;
     width: 100%;
     min-height: 30px;
-    margin-left: 2.7624309392265194%;
-    *margin-left: 2.709239449864817%;
+    /* margin-left: 2.7624309392265194%; */
+    /* *margin-left: 2.709239449864817%; */
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -7318,6 +7318,10 @@ a.badge:focus {
   }
   .modal.fade.in {
     top: 20px;
+  }
+
+  .span3 .small {
+    margin-left: 0px;
   }
 }
 
