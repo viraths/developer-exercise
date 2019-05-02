@@ -1,5 +1,4 @@
 import React from 'react';
-import { API_ENDPOINT } from '../constants';
 
 class Report extends React.Component {
     constructor(props) {
@@ -13,14 +12,13 @@ class Report extends React.Component {
                 year: '',
                 highestEmission: ''
             },
-            populationGrowthData: [],
-            co2EmissionData: []
+            error: ''
         };
     }
     getReportData() {
         fetch('/report')
             .then(res => res.json())
-            .then(res => {console.log(res);this.setState(res)});
+            .then(res => this.setState(res));
     }
 
     componentWillMount() {
@@ -28,12 +26,18 @@ class Report extends React.Component {
     }
 
     render() {
-
-        console.log('Population', this.state.populationGrowthData);
-        console.log('Emission', this.state.co2EmissionData);
+        const title = <h1>ABX - Developer Exercise</h1>;
+        if (this.state.error) {
+            return (
+                <div>
+                    {title}
+                    <h3>Unexpected Error, Please try again later</h3>
+                </div>
+            );
+        }
         return (
             <div>
-                <h1>ABX - Developer exercis (getting there)</h1>
+                {title}
                 <h3>The country with the higest average of "Urban population growth (annual %)" between 1980 and 1990</h3>
                 <table>
                     <tbody>

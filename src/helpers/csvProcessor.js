@@ -15,7 +15,7 @@ const checkRowCanBeIncludedInPopulationGrowthData = (row) => {
     return row['Indicator Name'] === 'Urban population growth (annual %)'
 }
 
-const generatePopulationGrowthData = (populationData) => {
+const generatePopulationGrowthData = async (populationData) => {
     let country = '';
     let averageGrowth = 0;
     for (const value of populationData) {
@@ -42,7 +42,7 @@ const getCo2EmissionData = (row, co2Emissions) => {
     return co2Emissions;
 }
 
-const generateCo2EmissionData = (co2EmissionData) => {
+const generateCo2EmissionData = async (co2EmissionData) => {
     const highestEmission = co2EmissionData.reduce((a, b) => Math.max(a, b));
     const year = co2EmissionData.indexOf(highestEmission);
 
@@ -68,11 +68,16 @@ const getReportData = async () => {
             }
         })
         .on('error', err => {error = err});
+
+        const [populationStats, emissionStats] = await Promise.all([
+            generatePopulationGrowthData(populationGrowth),
+            generateCo2EmissionData(co2Emissions)
+        ]);
+
+        return [populationStats, emissionStats, error];
     } catch (err) {
-
+        return [{}, {}, err];
     }
-
-    return [generatePopulationGrowthData(populationGrowth), generateCo2EmissionData(co2Emissions), error];
 };
 
 export default getReportData;

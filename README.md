@@ -17,4 +17,20 @@ If you'd prefer not have this repo public on your Github, feel free to clone it 
 
 
 ## Solution
-WIP
+
+### How to run locally
+
+Step I - Setup the repo locally and install docker
+* git clone https://github.com/viraths/developer-exercise.git
+* Please follow [this gudie](https://docs.docker.com/install/) to install docker. (Ignore if you have docker installed already).
+
+Step II - Run the application
+
+```
+cd path/to/repository
+docker build . --no-cache -t abx_developer_exercise:latest
+
+docker run -d -p 3000:3000 --name abx_developer_exercise abx_developer_exercise:latest
+```
+
+Visit [this page](http://localhost:3000/) to see the solution
