@@ -1,22 +1,10 @@
+# Refer to https://github.com/yoheimuta/protolint/blob/master/_example/config/.protolint.yaml for more information.
+# Lint directives.
 lint:
-    rules_option:
-        max_line_length:
-            max_chars: 120
-            tab_chars: 2
-        indent:
-            style: 2
-            newline: "\n"
-        enum_field_names_zero_value_end_with:
-            suffix: UNSPECIFIED
-        messages_have_comment:
-            should_follow_golang_style: true
-        services_have_comment:
-            should_follow_golang_style: true
-        rpcs_have_comment:
-            should_follow_golang_style: true
-        fields_have_comment:
-            should_follow_golang_style: true
-        enums_have_comment:
-            should_follow_golang_style: true
-        enum_fields_have_comment:
-            should_follow_golang_style: true
+  rules_option:
+    # MAX_LINE_LENGTH rule option.
+    max_line_length:
+      # Enforces a maximum line length
+      max_chars: 120
+      # Specifies the character count for tab characters
+      tab_chars: 2
